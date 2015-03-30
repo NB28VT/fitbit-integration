@@ -1,11 +1,9 @@
 class AuthenticatedLoader
   def oauth_access(verifier, client, consumer_key, consumer_secret, request_token)
-    binding.pry
-    request_token = client.request_token
     token = request_token.token
     secret = request_token.secret
-
     access_token = client.authorize(token, secret, { :oauth_verifier => verifier })
+
     token = access_token.token
     secret = access_token.secret
     # Need way to pass in user id through UX
@@ -14,5 +12,7 @@ class AuthenticatedLoader
     access_token = client.reconnect(token, secret)
     # Pass client to runner here
     client
+
+    binding.pry
   end
 end
