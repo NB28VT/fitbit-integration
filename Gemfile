@@ -13,6 +13,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'dotenv'
 gem 'fitgem'
 gem 'chronic'
+gem 'activerecord-session_store'
 
 group :development, :test do
   gem 'pry'
