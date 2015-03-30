@@ -18,6 +18,7 @@ class AuthenticatedLoader
     parsed_timeframe = Chronic.parse(timeframe)
     activity = client.data_by_time_range('/activities/log/minutesSedentary', { base_date: parsed_timeframe, end_date: Time.now })
     # Returns value of current activity level
-    activity["activities-log-minutesSedentary"].first["value"]
+    time = activity["activities-log-minutesSedentary"].first["value"]
+    binding.pry
   end
 end
