@@ -1,0 +1,10 @@
+<h1>Welcome to Fitbit integration</h1>
+
+<h2>Follow the link below to get your code and enter it in the field</h2>
+<%= link_to "Fitbit ", @oauth_access_url, target: "_blank" %>
+
+<%= form_tag("/user", method: "get")  do |f| %>
+  <%= label_tag :verifier %><br>
+  <%= text_field_tag :verifier %>
+  <%= submit_tag("Search") %>
+<% end %>
