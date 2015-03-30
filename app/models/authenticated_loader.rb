@@ -8,11 +8,16 @@ class AuthenticatedLoader
     secret = access_token.secret
     # Need way to pass in user id through UX
     user_id = '3B8C8S'
-    client = Fitgem::Client.new({:consumer_key => consumer_key, :consumer_secret => consumer_secret, :token => token, :secret => secret, :user_id => user_id})
+    authenticated_client = Fitgem::Client.new({:consumer_key => consumer_key, :consumer_secret => consumer_secret, :token => token, :secret => secret, :user_id => user_id})
     access_token = client.reconnect(token, secret)
     # Pass client to runner here
-    client
+    authenticated_client
+  end
 
-    binding.pry
+  def time_not_moving(timeframe, client)
+    parsed_timeframe = Chronic.parse(timeframe)
+    activity = client.data_by_time_range('/activities/log/minutesSedentary', { base_date: parsed_timeframe, end_date: Time.now })
+    # Returns value of current activity level
+    activity["activities-log-minutesSedentary"].first["value"]
   end
 end

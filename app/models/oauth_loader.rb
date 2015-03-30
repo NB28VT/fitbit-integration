@@ -20,12 +20,4 @@ class OauthLoader
 
     "http://www.fitbit.com/oauth/authorize?oauth_token=#{token}"
   end
-
-
-  def time_not_moving(timeframe, client)
-    parsed_timeframe = Chronic.parse(timeframe)
-    activity = client.data_by_time_range('/activities/log/minutesSedentary', { base_date: parsed_timeframe, end_date: Time.now })
-    # Returns value of current activity level
-    activity["activities-log-minutesSedentary"].first["value"]
-  end
 end
