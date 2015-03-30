@@ -15,6 +15,7 @@ gem 'fitgem'
 gem 'chronic'
 
 group :development, :test do
+  gem 'pry'
   gem 'capybara'
   gem 'rspec-rails'
   gem 'byebug'
