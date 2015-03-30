@@ -21,4 +21,9 @@ class AuthenticatedLoader
     time = activity["activities-log-minutesSedentary"].first["value"]
     binding.pry
   end
+
+
+
+
+
 end
