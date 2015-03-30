@@ -1,5 +1,5 @@
 class OauthLoader
-  
+
 Dotenv.load
 
   # Fitgem client docs: http://www.rubydoc.info/gems/fitbit/0.2.0/Fitbit/Client#activities_on_date-instance_method
@@ -9,6 +9,18 @@ Dotenv.load
     @consumer_secret = ENV['FITBIT_CONSUMER_SECRET']
   end
   # Gets access to client
+
+  def get_access_url
+    client = Fitgem::Client.new({:consumer_key => @consumer_key, :consumer_secret => @consumer_secret})
+
+    request_token = client.request_token
+    token = request_token.token
+    secret = request_token.secret
+
+    "http://www.fitbit.com/oauth/authorize?oauth_token=#{token}"
+  end
+
+
 
   def oauth_access
     client = Fitgem::Client.new({:consumer_key => @consumer_key, :consumer_secret => @consumer_secret})
