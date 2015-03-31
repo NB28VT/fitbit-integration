@@ -1,5 +1,4 @@
 class ApiMethods
-
   def get_activities(client)
     client.activities_on_date(Date.today)
   end
