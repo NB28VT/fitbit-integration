@@ -14,4 +14,20 @@ class ApiMethods
   def fairly_active_minutes(client)
     client.activities_on_date(Date.today)["summary"]["fairlyActiveMinutes"]
   end
+
+  def lightly_active_minutes(client)
+    client.activities_on_date(Date.today)["summary"]["lightlyActiveMinutes"]
+  end
+
+  def very_active_minutes(client)
+    client.activities_on_date(Date.today)["summary"]["veryActiveMinutes"]
+  end
+
+  def floors(client)
+    client.activities_on_date(Date.today)["summary"]["floors"]
+  end
+
+  def steps(client)
+    client.activities_on_date(Date.today)["summary"]["steps"]
+  end
 end
