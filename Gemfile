@@ -14,6 +14,7 @@ gem 'dotenv'
 gem 'fitgem'
 gem 'chronic'
 gem 'activerecord-session_store'
+gem 'whenever', require: false
 
 group :development, :test do
   gem 'pry'
