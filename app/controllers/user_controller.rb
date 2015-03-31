@@ -1,7 +1,7 @@
 class UserController < ApplicationController
   def index
-    # Dry this up with a helper
     authenticated_loader = AuthenticatedLoader.new
+    # Helper in application controller
     user = oauth_load_session_helper(authenticated_loader)
     api_methods = ApiMethods.new
     @activities_hash = api_methods.get_activities(user)
