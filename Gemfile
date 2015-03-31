@@ -15,6 +15,7 @@ gem 'fitgem'
 gem 'chronic'
 gem 'activerecord-session_store'
 gem 'whenever', require: false
+gem 'devise'
 
 group :development, :test do
   gem 'pry'
