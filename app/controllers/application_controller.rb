@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
     consumer_secret = session[:consumer_secret]
     request_token = session[:request_token]
     consumer_key = session[:consumer_key]
-    user = authenticated_loader.oauth_access(verifier
+    user = authenticated_loader.oauth_access(verifier,
       client,
       consumer_key,
       consumer_secret,
