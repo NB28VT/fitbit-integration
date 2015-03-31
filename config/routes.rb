@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "dashboard#index"
+  root to: "user#index"
   resources :dashboard, only: [:index]
   resources :user, only: [:index]
 end
