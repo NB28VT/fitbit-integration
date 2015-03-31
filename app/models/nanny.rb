@@ -3,11 +3,10 @@ class Nanny
   def initialize(user)
     @api_methods = ApiMethods.new
     # Pass in user object here
-    @user = user
+    @user = current_user
   end
 
   # Dry this up later
-
   def have_you_been_bad
     # Shut off overnight
     if Time.now.hour.between?(23,7)
