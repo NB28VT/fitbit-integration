@@ -15,14 +15,4 @@ class ApiMethods
   def fairly_active_minutes(client)
     client.activities_on_date(Date.today)["summary"]["fairlyActiveMinutes"]
   end
-
-
-
-
-
-
-
-
-
-
 end
