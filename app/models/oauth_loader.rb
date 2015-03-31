@@ -2,13 +2,13 @@ class OauthLoader
   attr_reader :client, :consumer_key, :consumer_secret, :request_token
   Dotenv.load
 
-  # Fitgem client docs: http://www.rubydoc.info/gems/fitbit/0.2.0/Fitbit/Client#activities_on_date-instance_method
 
   def initialize
     @consumer_key = ENV['FITBIT_CONSUMER_KEY']
     @consumer_secret = ENV['FITBIT_CONSUMER_SECRET']
     # Client is getting reinitialized on page start up
     @client = Fitgem::Client.new({:consumer_key => @consumer_key, :consumer_secret => @consumer_secret})
+    binding.pry
   end
 
   # Gets access to client
